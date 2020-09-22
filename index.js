@@ -284,9 +284,14 @@ function questao10() {
 
 readline.question(`Qual o endereço do seu sistema (http://localhost:3000) ?\n`, (url) => {
     readline.close();
+    
     if (!url) {
         baseUrl = 'http://localhost:3000';
+    }else{
+        baseUrl = url;
     }
+
+    console.log('Configurando url ', url);
 
     questao01()
         .then(() => questao02())
